@@ -1,0 +1,10 @@
+#!/bin/bash
+while read oldrev newrev ref
+do
+    if [[ $ref =~ .*/main$ ]];
+    then
+        echo "Deploying to production..."
+        ./deploy.sh
+    fi
+done
+
